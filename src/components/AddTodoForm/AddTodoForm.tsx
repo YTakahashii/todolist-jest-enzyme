@@ -10,7 +10,7 @@ export default class AddTodoForm extends React.Component<
     super(props);
 
     this.state = {
-      input: '',
+      input: ''
     };
   }
 
@@ -39,13 +39,13 @@ export default class AddTodoForm extends React.Component<
     this.props.addTodo(this.state.input);
 
     this.setState({
-      input: '',
+      input: ''
     });
   };
 
   private onInputChange = (e: React.FormEvent<HTMLInputElement>) => {
     this.setState({
-      input: e.currentTarget.value,
+      input: e.currentTarget.value
     });
   };
 }

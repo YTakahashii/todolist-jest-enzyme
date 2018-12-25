@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 import AddTodoForm from 'src/components/AddTodoForm/AddTodoForm';
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<TodoAction>,
+  dispatch: Dispatch<TodoAction>
 ): AddTodoFormDispatchProps => ({
-  addTodo: (s: string) => dispatch(addTodo(s)),
+  addTodo: (s: string) => dispatch(addTodo(s))
 });
 
 export default connect(
   null,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(AddTodoForm);
