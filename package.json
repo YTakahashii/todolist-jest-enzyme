@@ -19,9 +19,13 @@
     "@types/node": "^10.12.18",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^6.0.11",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
+    "react-redux": "^6.0.0",
+    "react-testing-library": "^5.4.2",
+    "typesafe-actions": "^2.0.4",
     "typescript": "^3.2.2"
   },
   "lint-staged": {
@@ -32,6 +36,6 @@
   },
   "prettier": {
     "singleQuote": true,
-      "trailingComma": "all"
+    "trailingComma": "all"
   }
 }
