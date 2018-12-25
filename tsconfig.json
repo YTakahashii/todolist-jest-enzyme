@@ -17,7 +17,14 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths": {
+      "@actions": ["src/actions"],
+      "@components": ["src/components"],
+      "@contianers": ["src/containers"],
+      "@reducers": ["src/reducers"],
+      "@states": ["src/reducers"]
+    }
   },
   "exclude": [
     "node_modules",
