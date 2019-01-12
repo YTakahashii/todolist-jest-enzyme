@@ -39,6 +39,9 @@
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "tabWidth": 4,
+    "jsxSingleQuote": true,
+    "trailingComma": "none"
   }
 }
