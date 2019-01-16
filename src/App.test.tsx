@@ -1,9 +1,11 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+enzyme.configure({ adapter: new Adapter() });
+
+it('App renders without crashing', () => {
+    const component = enzyme.shallow(<App />);
+    expect(component.exists()).toEqual(true);
 });
