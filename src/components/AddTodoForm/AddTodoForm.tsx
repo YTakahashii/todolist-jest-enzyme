@@ -22,6 +22,7 @@ export default class AddTodoForm extends React.Component<
                         type='text'
                         value={this.state.input}
                         onChange={this.onInputChange}
+                        aria-label='todo-input'
                     />
                     <button type='submit' className='todo-submit'>
                         Todoを追加
