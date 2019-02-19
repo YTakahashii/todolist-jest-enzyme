@@ -19,7 +19,7 @@ jobs:
     displayName: 'npm install'
 
   - script: |
-      npm test
+      npm run test:ci
     displayName: 'exec test'
   - script: |
       npm build
