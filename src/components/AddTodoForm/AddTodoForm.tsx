@@ -1,11 +1,13 @@
 import * as React from 'react';
 import AddTodoFormProps from './AddTodoFromProps';
 import AddTodoFormState from './AddTodoFromState';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import styles from './AddTodoFormStyle';
+import classNames from 'classnames';
 
-export default class AddTodoForm extends React.Component<
-    AddTodoFormProps,
-    AddTodoFormState
-> {
+class AddTodoForm extends React.Component<AddTodoFormProps, AddTodoFormState> {
     constructor(props: AddTodoFormProps) {
         super(props);
 
@@ -15,27 +17,37 @@ export default class AddTodoForm extends React.Component<
     }
 
     public render() {
+        const { classes } = this.props;
         return (
-            <div>
+            <div className={classes.container}>
                 <form onSubmit={this.onFormSubmit}>
-                    <input
-                        type='text'
+                    <TextField
+                        id='outlined-string'
+                        label='Todo'
                         value={this.state.input}
-                        onChange={this.onInputChange}
-                        aria-label='todo-input'
+                        onChange={this.handleChange('input')}
+                        className={classNames(classes.textField, classes.dense)}
+                        margin='normal'
                     />
-                    <button type='submit' className='todo-submit'>
+                    <Button
+                        variant='contained'
+                        color='primary'
+                        className={classes.button}
+                        type='submit'
+                    >
                         Todoを追加
-                    </button>
+                    </Button>
                 </form>
             </div>
         );
     }
 
-    public onInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    public handleChange = (name: keyof AddTodoFormState) => (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
         this.setState({
-            input: e.currentTarget.value
-        });
+            [name]: event.target.value
+        } as Pick<AddTodoFormState, keyof AddTodoFormState>);
     };
 
     public onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -52,3 +64,5 @@ export default class AddTodoForm extends React.Component<
         });
     };
 }
+
+export default withStyles(styles)(AddTodoForm);
