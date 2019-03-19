@@ -25,9 +25,10 @@ const todos = (state: Todos = initialState, action: TodoAction): Todos => {
                     : todo
             );
         case TodoActionType.DELETE_TODO:
+            const deleteIndex = state.findIndex(todo => todo.id === action.id);
             return [
-                ...state.slice(0, action.id),
-                ...state.slice(action.id + 1)
+                ...state.slice(0, deleteIndex),
+                ...state.slice(deleteIndex + 1)
             ];
         default:
             return state;
